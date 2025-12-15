@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kenneth Amoah - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .page-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            touch-action: manipulation;
+        }
+
+        .page-link:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section */
+        section {
+            background: #fff;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        /* Profile Section */
+        .profile-content {
+            display: flex;
+            gap: 35px;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-text p {
+            margin-bottom: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .profile-text strong {
+            color: #2c3e50;
+        }
+
+        /* Activities */
+        .activities-list {
+            list-style: none;
+        }
+
+        .activities-list li {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            border-radius: 4px;
+            color: #555;
+            transition: background-color 0.2s;
+        }
+
+        .activities-list li:hover {
+            background-color: #e8f4f8;
+        }
+
+        /* Social Links */
+        .social-text {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            touch-action: manipulation;
+        }
+
+        .social-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        /* Video */
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Music */
+        .music-item {
+            margin-bottom: 25px;
+        }
+
+        .music-item h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 50px;
+        }
+
+        /* Tablet Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 35px 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .page-link {
+                padding: 10px 18px;
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            section {
+                padding: 30px 25px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .profile-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .profile-text {
+                width: 100%;
+            }
+
+            .profile-text p {
+                text-align: left;
+            }
+
+            .activities-list li {
+                padding: 14px 18px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            header {
+                padding: 25px 15px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .page-link {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin-top: 15px;
+            }
+
+            .container {
+                padding: 20px 12px;
+            }
+
+            section {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+                border-radius: 6px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .profile-text p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-bottom: 15px;
+            }
+
+            .activities-list li {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+
+            .social-text {
+                font-size: 0.95rem;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+            }
+
+            .social-link svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            video {
+                border-radius: 6px;
+            }
+
+            .music-item {
+                margin-bottom: 20px;
+            }
+
+            .music-item h3 {
+                font-size: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .gallery-item img {
+                height: 220px;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 0.9rem;
+                margin-top: 30px;
+            }
+        }
+
+        /* Very Small Mobile */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            .page-link {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 18px 12px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-link {
+                width: 42px;
+                height: 42px;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Kenneth Amoah</h1>
+        <p>Creative Developer & Visual Storyteller</p>
+        <a href="secondpage.html" class="page-link">Visit Page 2</a>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Profile Section -->
+        <section>
+            <h2>About Me</h2>
+            <div class="profile-content">
+                <img src="assest/1.jpg" alt="Kenneth Amoah" class="profile-image">
+                <div class="profile-text">
+                    <p>Hi, I'm <strong>Kenneth Amoah</strong>, also known as Kay. I'm a creative developer and visual storyteller passionate about bringing ideas to life.</p>
+                    
+                    <p>I bring ideas to life through code, design, and motion. With over 5 years of experience, I craft modern websites, eye-catching flyers, and compelling ad videos that connect with audiences and elevate brands. Every project I take on is built with purpose.</p>
+
+                    <p>Outside of client work, I'm always exploring. I sketch ideas, experiment with motion design, and stay curious about tech and storytelling. Football analysis and creative simulations also fuel how I think and build—strategic, expressive, and always evolving.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section>
+            <h2>Favorite Activities</h2>
+            <ul class="activities-list">
+                <li>Trying out new skills</li>
+                <li>Casual gaming</li>
+                <li>Watching movies and cartoons</li>
+                <li>Exploring places on the web</li>
+                <li>Listening to music</li>
+            </ul>
+        </section>
+
+        <!-- Social Media Section -->
+        <section>
+            <h2>Connect With Me</h2>
+            <p class="social-text">Follow me on social media to explore my creative and professional world.</p>
+            <div class="social-links">
+                <a href="https://x.com/Kayt530" target="_blank" class="social-link" title="X (Twitter)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+
+                <a href="https://instagram.com/kay_t530" target="_blank" class="social-link" title="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+
+                <a href="https://linkedin.com/in/kay-t-926a72352" target="_blank" class="social-link" title="LinkedIn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+
+                <a href="https://tiktok.com/@kay.t530?_r=1&_t=ZM-91blnmjdmq8" target="_blank" class="social-link" title="TikTok">
+                    <svg width="20" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section>
+            <h2>Video Introduction</h2>
+            <video controls>
+                <source src="assest/Snapchat-313738641.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Music Section -->
+        <section>
+            <h2>My Favorite Music</h2>
+            
+            <div class="music-item">
+                <h3>Not Afraid - Eminem</h3>
+                <audio controls>
+                    <source src="assest/getstuffed.co.za - Eminem - Not Afraid (192 KBps).m4a" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="music-item">
+                <h3>Feet Don't Fail Me Now - Joy Crookes</h3>
+                <audio controls>
+                    <source src="assest/ghrc.co.za - Feet Don t Fail Me Now - Joy Crookes (FIFA 22 Official Soundtrack) (256 KBps).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="music-item">
+                <h3>Be My Baby - The Ronettes</h3>
+                <audio controls>
+                    <source src="assest/The Ronettes - Be My Baby.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="music-item">
+                <h3>Love Me Not - Ravyn Lenae</h3>
+                <audio controls>
+                    <source src="assest/ghrc.co.za - Ravyn Lenae - Love Me Not (Lyrics) (256 KBps).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section>
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="assest/2.jpg" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/6.jpg" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/3.jpg" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/12.jpg" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/13.jpg" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/8.jpg" alt="Gallery Image 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/7.jpg" alt="Gallery Image 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/11.jpg" alt="Gallery Image 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/14.jpg" alt="Gallery Image 9">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/9.jpg" alt="Gallery Image 10">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/4.jpg" alt="Gallery Image 11">
+                </div>
+                <div class="gallery-item">
+                    <img src="assest/5.jpg" alt="Gallery Image 12">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kay Tech Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
